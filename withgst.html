@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GST TAX CALCULATOR</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .container{
+				width:100%;
+				height:80%;
+			    margin:0 auto;
+			}
+  body{
+		background-color:#00ffff;
+		}
+  h2{
+	font-size:16px;
+	color:red;
+	text-align:center;
+	font-weight:bold;
+	}
+.header{
+		background:green;
+		border:1px solid blue;
+		padding:10px;
+		}
+table{
+		width:100%;
+		}
+  </style>
+  </head>
+<body>
+<div class="container">
+<div class="header">
+<h2>AMOUNT WITH GST</h2>
+</div><br>
+<div class="col-xs-6 col-md-2 col-sm-2 multi-horizontal" data-for="2">
+<div class="form-group">
+			<h5>INVOICE AMOUNT:</h5>
+			</div>
+			</div>
+<div class="col-xs-6 col-md-2 col-sm-2 multi-horizontal" data-for="2">
+<div class="form-group">
+       <input type="row" class="form-control" name="name1" id="id1" placeholder="00" maxlength="10">
+  </div>
+  </div>
+  <div class="col-xs-6 col-md-2 col-sm-2 multi-horizontal" data-for="2">
+<div class="form-group">
+			<h5>GST RATE%:</h5>
+			</div>
+			</div>
+			  <div class="col-xs-6 col-md-2 col-sm-2 multi-horizontal" data-for="2">
+<div class="form-group">
+ <input type="row" class="form-control" name="name2" id="id2" placeholder="00" maxlength="2" onblur="result();">
+</div>
+		</div>
+		 <div class="col-xs-6 col-md-2 col-sm-2 multi-horizontal" data-for="2">
+<div class="form-group">
+			</div>
+			</div>
+			<div>
+				
+			<input type="submit" class="btn btn-success" value="Calculate" onclick=" return result();">
+    </div>
+	<div>
+	<table style="width:100%">
+	<tr>
+	<th colspan="2">INSTATE</th>
+	<th colspan="2">OUTSTATE</th>
+	</tr>
+	<tr>
+	 <td><label>INVOICE AMOUNT</label></td>
+     <td><input type="number" value="0" name="gross_amount1" oninput="result()" id="result1" class="form-control"  readonly></td>
+   <td><label>INVOICE AMOUNT</label></td>
+      <td><input type="number" value="0" name="gross_amount2" oninput="result()" id="result2" class="form-control"  readonly></td>
+	  </tr>
+	  <tr>
+	   <td><label>CGST</label></td>
+      <td><input type="number" value="0" name="cgst1" oninput="result()" id="result3" class="form-control"  readonly></td>
+   <td><label>CGST</label></td>
+     <td><input type="number" value="0" name="cgst2" oninput="result()" id="result4" class="form-control"  readonly></td>
+	  </tr>
+	  <tr>
+	   <td><label>SGST</label></td>
+    <td><input type="number" value="0" name="sgst1" oninput="result()" id="result5" class="form-control"  readonly></td>
+		<td><label>SGST</label></td>
+	  <td><input type="number" value="0" name="sgst2" oninput="result()" id="result6" class="form-control"  readonly></td>
+	  </tr>
+	  <tr>
+   <td><label>AMOUNT AFTER GST</label></td>
+	<td><input type="number" value="0" name="invoice_amount1" oninput="result()" id="result7" class="form-control"  readonly></td>
+   <td><label>AMOUNT AFTER GST</label></td>
+ <td><input type="number" value="0" name="invoice_amount2" oninput="result()" id="result8" class="form-control"  readonly></td>
+	  </tr>
+	  </table>
+</div>
+</div>
+<script type="text/javascript">
+function result()
+{
+var x=document.getElementById("id1").value;
+var y=document.getElementById("id2").value;
+if(x==""&& y=="")
+{
+return false;
+}
+else
+{
+	CALCULATE();
+}
+}
+function CALCULATE()
+{
+var x=document.getElementById("id1").value;
+var y=document.getElementById("id2").value;
+ var sgst=parseInt(y)/2;
+	var cgst=parseInt(y)/2;
+	var gst = (parseInt(x)  * parseInt(y))/100;
+	var gross=parseInt(x)+parseInt(gst);
+	var camount=parseInt(gst)/2; 
+document.getElementById("result1").value=parseInt(x);
+document.getElementById("result2").value=parseInt(x);
+document.getElementById("result3").value=parseInt(camount);
+document.getElementById("result4").value=parseInt(camount);
+document.getElementById("result5").value=parseInt(camount);
+document.getElementById("result6").value=parseInt(camount);
+document.getElementById("result7").value=parseInt(gross);
+document.getElementById("result8").value=parseFloat(gross);
+}
+</script>
+</body>
+</html>

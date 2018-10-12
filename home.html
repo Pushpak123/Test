@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GST TAX CALCULATOR</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .container{
+				width:100%;
+				height:80%;
+				margin:0 auto;
+				padding:10px;
+				}
+.section{
+			margin:0 auto;
+		}
+  body{
+			background-color:#66e0ff;
+		}
+  .form-group{
+				padding:10px;
+				margin:0 auto;
+	}
+h2{
+	font-size:16px;
+	color:red;
+	text-align:center;
+	font-weight:bold;
+}
+.back_img{
+			background-image:url("C:\gstcalculator\images\gst1.jpg");
+			background-position:bottom;
+			background-repeat:no-repeat;
+			background-attachment:fixed;
+			
+}
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h2>GST TAX CALCULATOR</h2>
+ </div>
+ <div class="section">
+  <div class="row row-sm-offset">
+  <div class="col-xs-6 multihorizontal">
+  <div class="form-group">
+  <form action="withoutgst.html">
+  <!--<button type="submit" class="btn btn-primary" onclick="withgst.html">AMOUNT WITHOUT GST</button>-->
+   <button type="submit" class="btn btn-primary" onclick="withoutgst.html">WITHOUT GST</button>
+  </form>
+  </div>
+  </div>
+  </div>
+    <div class="row row-sm-offset">
+  <div class="col-xs-6 multihorizontal">
+  <div class="form-group">
+  <form action="withgst.html">
+    <button type="submit" class="btn btn-danger" onclick="withgst.html" width="49%">WITH GST</button>
+<!--<button type="submit" class="btn btn-primary" onclick="withgst.html">AMOUNT WITHOUT GST</button>-->
+  </form>
+    </div>
+  </div>
+ </div>
+   <div class="row row-sm-offset">
+  <div class="col-xs-6 multihorizontal">
+  <div class="form-group">
+  <form action="#">
+ <button type="submit" class="btn btn-success" width="49%">SHARE APP</button>
+ </form>
+ </div>
+ </div>
+ </div>
+    <div class="row row-sm-offset">
+  <div class="col-xs-6 multihorizontal">
+  <div class="form-group">
+  <form action="#">
+    <button type="submit" class="btn btn-info" width="49%">MORE APP</button>  
+	</form>
+</div>
+</div>
+</div>
+</div>
+<div class="back_img">
+<img src="C:\gstcalculator\images\gst1.jpg">
+</div>
+</div>
+</body>
+</html>
